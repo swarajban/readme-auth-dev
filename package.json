@@ -1,0 +1,28 @@
+{
+  "name": "readme-auth-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarajban/readme-auth-dev.git"
+  },
+  "keywords": [
+    "readme",
+    "jwt",
+    "auth"
+  ],
+  "author": "Swaraj Banerjee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swarajban/readme-auth-dev/issues"
+  },
+  "homepage": "https://github.com/swarajban/readme-auth-dev#readme",
+  "dependencies": {
+    "jsonwebtoken": "^5.7.0",
+    "node-uuid": "^1.4.7"
+  }
+}
