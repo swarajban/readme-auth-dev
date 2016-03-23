@@ -2,8 +2,8 @@ var jsonwebtoken = require('jsonwebtoken');
 var uuid = require('node-uuid');
 
 var ReadMeAuth = function (projectURL, jwtSecret) {
-  this.projectUrl = projectURL;
-  this.jwtSecret = jwtSecret;
+  this.projectUrl = projectURL || process.env['README_PROJECT_URL'];
+  this.jwtSecret = jwtSecret || process.env['README_PROJECT_SECRET'];
 };
 
 // Return an URL with an authentication token in the query string

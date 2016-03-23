@@ -61,4 +61,16 @@ describe('ReadMe Auth', function () {
 
   });
 
+  describe('constructor', function () {
+    it('should parse project URL & jwt secret from environment variables', function () {
+      process.env['README_PROJECT_URL'] = READ_ME_PROJECT_URL;
+      process.env['README_PROJECT_SECRET'] = JWT_SECRET;
+
+      var EnvBasedAuth = new ReadMeAuth();
+      assert.equal(READ_ME_PROJECT_URL, EnvBasedAuth.projectUrl);
+      assert.equal(JWT_SECRET, EnvBasedAuth.jwtSecret);
+
+    });
+  });
+
 });
