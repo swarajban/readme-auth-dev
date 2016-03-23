@@ -16,13 +16,13 @@ describe('ReadMe Auth', function () {
 
   // Initialize a ReadMeAuth client
   before(function () {
-    TestAuth = ReadMeAuth(READ_ME_PROJECT_URL, JWT_SECRET);
+    TestAuth = new ReadMeAuth(READ_ME_PROJECT_URL, JWT_SECRET);
   });
 
   // Test generating a valid JWT with given payload & secret
   describe('_getJWT', function () {
     it('should return a valid JWT when given a payload', function (done) {
-      var token = TestAuth._getJWT(TEST_PAYLOAD, JWT_SECRET);
+      var token = ReadMeAuth._getJWT(TEST_PAYLOAD, JWT_SECRET);
       jsonwebtoken.verify(token, JWT_SECRET, { audience: TestAuth.audience },
         function (err, decoded) {
           assert.ifError(err);
