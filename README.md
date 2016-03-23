@@ -1,5 +1,4 @@
-readme-auth
-==
+# readme-auth
 
 A Node.js library for generating an URL that automatically logs a user in from your site to your ReadMe developer hub
 
