@@ -59,3 +59,7 @@ var user = {
 };
 var url = MyReadMeAuth.getAuthUrl(user);
 ```
+
+## Example Express App
+[readme-auth-example](https://github.com/swarajban/readme-auth-example) is a fully functioning node express application 
+that users `readme-auth`.
