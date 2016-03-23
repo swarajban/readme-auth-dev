@@ -25,7 +25,7 @@ var url = MyReadMeAuth.getAuthUrl(user);
 
 ## API
 
-### ReadMeAuth(projectUrl, secret) constructor
+### `new` ReadMeAuth(projectUrl, secret)
 Constructs a new ReadMeAuth object that can be used to 
 
 #### Arguments

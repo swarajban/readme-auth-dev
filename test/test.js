@@ -14,6 +14,10 @@ describe('ReadMe Auth', function () {
     email: 'owlbert@readme.io'
   };
 
+  var VERIFY_JWT_OPTIONS = {
+    audience: ReadMeAuth.audience
+  };
+
   // Initialize a ReadMeAuth client
   before(function () {
     TestAuth = new ReadMeAuth(READ_ME_PROJECT_URL, JWT_SECRET);
@@ -23,7 +27,7 @@ describe('ReadMe Auth', function () {
   describe('_getJWT', function () {
     it('should return a valid JWT when given a payload', function (done) {
       var token = ReadMeAuth._getJWT(TEST_PAYLOAD, JWT_SECRET);
-      jsonwebtoken.verify(token, JWT_SECRET, { audience: TestAuth.audience },
+      jsonwebtoken.verify(token, JWT_SECRET, VERIFY_JWT_OPTIONS,
         function (err, decoded) {
           assert.ifError(err);
           assert.ok(decoded);
@@ -51,7 +55,7 @@ describe('ReadMe Auth', function () {
       var queryToken = queryParts[1];
       assert.equal('auth_token', queryKey);
 
-      jsonwebtoken.verify(queryToken, JWT_SECRET,
+      jsonwebtoken.verify(queryToken, JWT_SECRET, VERIFY_JWT_OPTIONS,
         function (err) {
           assert.ifError(err);
           done();
