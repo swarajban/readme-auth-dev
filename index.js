@@ -1,5 +1,5 @@
 var jsonwebtoken = require('jsonwebtoken');
-var uuid = require('node-uuid');
+var uuid = require('uuid');
 
 var ReadMeAuth = function (projectURL, jwtSecret) {
   this.projectUrl = projectURL || process.env['README_PROJECT_URL'];
